@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Messages - Lenshub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .sidebar {
+            height: 100vh;
+            background-color: #071952;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 250px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .sidebar a:hover {
+            color: #DD761C;
+        }
+        .navbar {
+            background-color: #071952;
+        }
+        .navbar a {
+            color: white;
+        }
+        .navbar a:hover {
+            color: #DD761C;
+        }
+        .messages-container {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .message-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .message-card:hover {
+            background-color: #f1f1f1;
+        }
+        .message-card .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .message-card .message-header h5 {
+            margin: 0;
+        }
+        .message-card .message-header .badge {
+            background-color: #DD761C;
+        }
+        .message-card .message-body {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .compose-message {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .compose-message input, .compose-message textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .send-message-btn {
+            background-color: #071952;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .send-message-btn:hover {
+            background-color: #DD761C;
+        }
+        .delete-btn, .mark-read-btn {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            color: #DD761C;
+        }
+        .delete-btn:hover, .mark-read-btn:hover {
+            color: #071952;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center">Lenshub Admin</h3>
+        <hr class="text-light">
+        <a href="#"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="usermanagement.html"><i class="fas fa-users"></i> Manage Users</a>
+        <a href="admingaraley.html"><i class="fas fa-camera"></i> Gallery</a>
+        <a href="adminmessage.html"><i class="fas fa-envelope"></i> Messages</a>
+        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Lenshub Admin Messages</a>
+        </div>
+    </nav>
+
+    <!-- Messages Section -->
+    <div class="messages-container">
+        <h2 class="text-center">Manage Messages</h2>
+
+        <!-- Messages List -->
+        <div class="row">
+            <!-- Message Card 1 -->
+            <div class="col-md-6">
+                <div class="message-card">
+                    <div class="message-header">
+                        <h5>John Doe <span class="badge">Unread</span></h5>
+                        <div>
+                            <button class="mark-read-btn" onclick="markRead(this)">Mark as Read</button>
+                            <button class="delete-btn" onclick="deleteMessage(this)">Delete</button>
+                        </div>
+                    </div>
+                    <div class="message-body">
+                        <p><strong>Email:</strong> johndoe@example.com</p>
+                        <p><strong>Message:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nulla id elit sodales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Card 2 -->
+            <div class="col-md-6">
+                <div class="message-card">
+                    <div class="message-header">
+                        <h5>Jane Smith <span class="badge">Read</span></h5>
+                        <div>
+                            <button class="mark-read-btn" onclick="markRead(this)">Mark as Unread</button>
+                            <button class="delete-btn" onclick="deleteMessage(this)">Delete</button>
+                        </div>
+                    </div>
+                    <div class="message-body">
+                        <p><strong>Email:</strong> janesmith@example.com</p>
+                        <p><strong>Message:</strong> Nulla facilisi. Curabitur scelerisque, risus et varius ullamcorper, metus eros malesuada justo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compose New Message -->
+        <div class="compose-message">
+            <h3>Compose New Message</h3>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <textarea id="messageContent" rows="5" placeholder="Your message..." required></textarea>
+            <button class="send-message-btn" onclick="sendMessage()">Send Message</button>
+        </div>
+    </div>
+
+    <script>
+        // Mark message as read/unread
+        function markRead(button) {
+            const badge = button.closest('.message-header').querySelector('.badge');
+            if (badge.innerText === 'Unread') {
+                badge.innerText = 'Read';
+                button.innerText = 'Mark as Unread';
+                badge.classList.remove('badge-danger');
+                badge.classList.add('badge-success');
+            } else {
+                badge.innerText = 'Unread';
+                button.innerText = 'Mark as Read';
+                badge.classList.remove('badge-success');
+                badge.classList.add('badge-danger');
+            }
+        }
+
+        // Delete message
+        function deleteMessage(button) {
+            if (confirm('Are you sure you want to delete this message?')) {
+                button.closest('.message-card').remove();
+            }
+        }
+
+        // Send a new message
+        function sendMessage() {
+            const subject = document.getElementById('subject').value;
+            const messageContent = document.getElementById('messageContent').value;
+
+            if (subject && messageContent) {
+                alert('Message sent successfully!');
+                document.getElementById('subject').value = '';
+                document.getElementById('messageContent').value = '';
+            } else {
+                alert('Please fill in both subject and message content.');
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

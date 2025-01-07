@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenshub - Services</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #e3e3e3, #c7d2e9);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background-color: #071952;
+            padding: 15px 20px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #DD761C;
+        }
+
+        main {
+            padding: 40px 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        main h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #071952;
+        }
+
+        main p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .service-card {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            text-align: center;
+            max-width: 350px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #071952;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #071952;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        footer p a {
+            color: #DD761C;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer p a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .services-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Our Services</h1>
+        <p>Explore the professional services we offer to capture and preserve your cherished moments.</p>
+        <div class="services-container">
+            <div class="service-card">
+                <img src="images/photography.jpeg" alt="Photography">
+                <h3>Photography</h3>
+                <p>Professional photography for all occasions, ensuring every moment is captured beautifully.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/video.jpeg" alt="Videography">
+                <h3>Videography</h3>
+                <p>Immortalize your moments with cinematic videos crafted with precision and creativity.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/Editing.jpeg" alt="Editing">
+                <h3>Editing</h3>
+                <p>Transform your photos and videos into masterpieces with our expert editing services.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/Event Coverage.jpeg" alt="Event Coverage">
+                <h3>Event Coverage</h3>
+                <p>Comprehensive event coverage to document your special days from start to finish.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Lenshub | Designed with ♥ by <a href="https://example.com">Lenshub Team</a></p>
+    </footer>
+</body>
+</html>

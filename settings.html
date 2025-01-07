@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings - Lenshub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #071952, #DD761C);
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #071952;
+        }
+
+        .navbar a {
+            color: white;
+        }
+
+        .navbar a:hover {
+            color: #DD761C;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #071952;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 250px;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+
+        .sidebar a:hover {
+            color: #DD761C;
+        }
+
+        .content-container {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        .settings-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .settings-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-control {
+            background-color: transparent;
+            border: 1px solid #DD761C;
+            color: white;
+        }
+
+        .form-control:focus {
+            border-color: #DD761C;
+            box-shadow: none;
+        }
+
+        .btn-custom {
+            background-color: #DD761C;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-custom:hover {
+            background-color: #071952;
+        }
+
+        .form-check-label {
+            color: white;
+        }
+
+        .tools-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .tools-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-card {
+            background-color: white;
+            color: #071952;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            background-color: #f1f1f1;
+        }
+
+        .tool-icon {
+            font-size: 30px;
+            color: #DD761C;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center">Lenshub Admin</h3>
+        <hr class="text-light">
+        <a href="#"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="usermanagement.html"><i class="fas fa-users"></i> Manage Users</a>
+        <a href="admingaraley.html"><i class="fas fa-camera"></i> Gallery</a>
+        <a href="adminmessage.html"><i class="fas fa-envelope"></i> Messages</a>
+        <a href="settings.html"><i class="fas fa-cogs"></i> Settings</a>
+        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Lenshub Admin Settings</a>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="content-container">
+
+        <!-- Admin Information Section -->
+        <div class="settings-section">
+            <div class="settings-title">Admin Information</div>
+            <form id="adminInfoForm">
+                <div class="mb-3">
+                    <label for="adminName" class="form-label">Admin Name</label>
+                    <input type="text" class="form-control" id="adminName" placeholder="Enter admin name">
+                </div>
+                <div class="mb-3">
+                    <label for="adminEmail" class="form-label">Admin Email</label>
+                    <input type="email" class="form-control" id="adminEmail" placeholder="Enter admin email">
+                </div>
+                <button type="submit" class="btn-custom" id="saveAdminInfo">Save Changes</button>
+            </form>
+        </div>
+
+        <!-- Security Settings Section -->
+        <div class="settings-section">
+            <div class="settings-title">Security Settings</div>
+            <form id="securityForm">
+                <div class="mb-3">
+                    <label for="currentPassword" class="form-label">Current Password</label>
+                    <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+                </div>
+                <div class="mb-3">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
+                </div>
+                <button type="submit" class="btn-custom" id="changePassword">Change Password</button>
+            </form>
+        </div>
+
+        <!-- Notification Settings Section -->
+        <div class="settings-section">
+            <div class="settings-title">Notification Settings</div>
+            <form id="notificationForm">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="emailNotifications">
+                    <label class="form-check-label" for="emailNotifications">Enable Email Notifications</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="pushNotifications">
+                    <label class="form-check-label" for="pushNotifications">Enable Push Notifications</label>
+                </div>
+                <button type="submit" class="btn-custom" id="saveNotifications">Save Notification Settings</button>
+            </form>
+        </div>
+
+        <!-- Customization Tools Section -->
+        <div class="tools-container">
+            <div class="tools-title">Customization Tools</div>
+
+            <!-- Tool Card 1: Theme Customizer -->
+            <div class="tool-card" onclick="openCustomizer()">
+                <div class="tool-icon"><i class="fa fa-paint-brush"></i></div>
+                <div class="tool-title">Theme Customizer</div>
+                <p>Choose a color scheme for your site. Pick from a selection of pre-made themes or create a custom one.</p>
+            </div>
+
+            <!-- Tool Card 2: Content Editor -->
+            <div class="tool-card" onclick="openContentEditor()">
+                <div class="tool-icon"><i class="fa fa-edit"></i></div>
+                <div class="tool-title">Content Editor</div>
+                <p>Edit site content, manage sections, and update text, images, and other elements.</p>
+            </div>
+
+            <!-- Tool Card 3: Analytics Dashboard -->
+            <div class="tool-card" onclick="openAnalytics()">
+                <div class="tool-icon"><i class="fa fa-line-chart"></i></div>
+                <div class="tool-title">Analytics Dashboard</div>
+                <p>View detailed analytics of your site's performance, including traffic, user activity, and more.</p>
+            </div>
+
+            <!-- Tool Card 4: User Management -->
+            <div class="tool-card" onclick="openUserManagement()">
+                <div class="tool-icon"><i class="fa fa-users"></i></div>
+                <div class="tool-title">User Management</div>
+                <p>Manage users, assign roles, and control user permissions across the platform.</p>
+            </div>
+
+            <!-- Tool Card 5: Backup and Restore -->
+            <div class="tool-card" onclick="openBackupRestore()">
+                <div class="tool-icon"><i class="fa fa-hdd"></i></div>
+                <div class="tool-title">Backup and Restore</div>
+                <p>Create backups of your site and restore previous versions if necessary.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('saveAdminInfo').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Admin information saved successfully!');
+        });
+
+        document.getElementById('changePassword').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Password changed successfully!');
+        });
+
+        document.getElementById('saveNotifications').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Notification settings updated!');
+        });
+
+        function openCustomizer() {
+            alert('Opening Theme Customizer...');
+        }
+
+        function openContentEditor() {
+            alert('Opening Content Editor...');
+        }
+
+        function openAnalytics() {
+            alert('Opening Analytics Dashboard...');
+        }
+
+        function openUserManagement() {
+            alert('Opening User Management...');
+        }
+
+        function openBackupRestore() {
+            alert('Opening Backup and Restore...');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
