@@ -1,0 +1,85 @@
+.about-lenshub {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+}
+
+.about-lenshub h1 {
+    color: #071952;
+    margin-bottom: 10px;
+}
+
+.about-lenshub p {
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio-showcase {
+    text-align: center;
+    padding: 20px;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.portfolio-card {
+    max-width: 300px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.portfolio-card h3 {
+    color: #071952;
+    margin-bottom: 5px;
+}
+
+.portfolio-card p {
+    color: #666;
+}
+
+.why-choose-us {
+    padding: 20px;
+    background-color: #fff5e5;
+    margin-top: 20px;
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    color: #071952;
+    margin-bottom: 15px;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+.why-choose-us ul li {
+    margin: 10px 0;
+    font-size: 16px;
+}

@@ -1,0 +1,124 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #071952;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #071952;
+    color: white;
+}
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('images/hero-image.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero button {
+  background: linear-gradient(90deg, #DD761C, #FF9A3F);
+  border: none;
+  padding: 12px 36px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+}
+
+.hero button:hover {
+  background: linear-gradient(90deg, #FF9A3F, #DD761C);
+  transform: scale(1.1);
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #FF9A3F;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #DD761C;
+  cursor: pointer;
+}
+
+/* Social Media Icons */
+.social-icons a {
+  margin: 0 20px;
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FF9A3F;
+}

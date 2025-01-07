@@ -1,0 +1,54 @@
+.camera-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+}
+
+.camera-section h1 {
+    text-align: center;
+    color: #071952;
+    margin-bottom: 10px;
+}
+
+.camera-section p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.camera-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.camera-card {
+    width: 280px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.camera-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.camera-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.camera-card h3 {
+    color: #071952;
+    margin-bottom: 5px;
+}
+
+.camera-card p {
+    color: #666;
+}
